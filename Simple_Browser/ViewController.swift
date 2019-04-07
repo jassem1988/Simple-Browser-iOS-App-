@@ -46,7 +46,10 @@ class ViewController: UIViewController, WKNavigationDelegate {
         guard let url = URL(string: "https://" + actionTitle) else { return }
         
         webView.load(URLRequest(url: url))
-        
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        title = webView.title
     }
 
 
