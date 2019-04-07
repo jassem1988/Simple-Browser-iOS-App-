@@ -37,6 +37,8 @@ class ViewController: UIViewController, WKNavigationDelegate {
         ac.addAction(UIAlertAction(title: "google.com", style: .default, handler: openPage))
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel)
         
+        ac.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem //For iPad
+        present(ac, animated: true) 
     }
 
 
