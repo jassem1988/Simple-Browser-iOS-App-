@@ -35,10 +35,17 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         ac.addAction(UIAlertAction(title: "apple.com", style: .default, handler: openPage))
         ac.addAction(UIAlertAction(title: "google.com", style: .default, handler: openPage))
-        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         ac.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem //For iPad
-        present(ac, animated: true) 
+        present(ac, animated: true)
+    }
+    
+    func openPage(action: UIAlertAction) {
+        
+        let url = URL(string: "https://" + action.title!)!
+        webView.load(URLRequest(url: url))
+        
     }
 
 
