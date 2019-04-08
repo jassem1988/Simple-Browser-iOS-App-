@@ -35,6 +35,8 @@ class ViewController: UIViewController, WKNavigationDelegate {
         toolbarItems = [progressButton, spacer, refresh]
         navigationController?.isToolbarHidden = false
         
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil) //Has to be before the URL
+        
         let url = URL(string: "https://www.google.com")!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
