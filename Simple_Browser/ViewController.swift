@@ -85,6 +85,10 @@ class ViewController: UIViewController, WKNavigationDelegate {
             }
         }
         
+        let alert = UIAlertController(title: "Denied", message: "This URL is not allowed", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
+        
         decisionHandler(.cancel)
     }
 
