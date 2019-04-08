@@ -28,6 +28,9 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         
+        toolbarItems = [spacer, refresh]
+        navigationController?.isToolbarHidden = false
+        
         let url = URL(string: "https://www.google.com")!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
