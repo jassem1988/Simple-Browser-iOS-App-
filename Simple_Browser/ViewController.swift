@@ -50,7 +50,9 @@ class ViewController: UITableViewController, WKNavigationDelegate {
         return websites.count
     }
     
-    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
     
     @objc func openTapped() {
         
