@@ -51,7 +51,9 @@ class ViewController: UITableViewController, WKNavigationDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Website", for: indexPath)
+        cell.textLabel?.text = websites[indexPath.row]
+        return cell
     }
     
     @objc func openTapped() {
