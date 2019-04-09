@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UITableViewController, WKNavigationDelegate {
+class ViewController: UIViewController, WKNavigationDelegate {
     //Properties
     var webView: WKWebView!
     var progressView: UIProgressView!
@@ -44,16 +44,6 @@ class ViewController: UITableViewController, WKNavigationDelegate {
         let url = URL(string: "https://" + websites[0])!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return websites.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Website", for: indexPath)
-        cell.textLabel?.text = websites[indexPath.row]
-        return cell
     }
     
     @objc func openTapped() {
